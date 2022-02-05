@@ -1,6 +1,7 @@
 import {setTaskList,typeSetTaskList} from '../actions';
 import TaskProps, { DefultState, ParamsReduders } from '../../interfaces';
 
+
 const infoModalDefault: TaskProps = {
     title: 'Soy modal uno',
     description: 'Description modal uno',

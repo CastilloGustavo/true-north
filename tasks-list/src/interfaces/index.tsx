@@ -3,6 +3,11 @@ interface TaskProps {
     description: string;
 }
 
+interface TaskItem {
+    value: number,
+    description: string,
+}
+
 
 interface DefultState {
     tasklist: TaskProps[];
@@ -15,5 +20,5 @@ interface ParamsReduders {
     payload: any,
 }
 
-export type {DefultState , ParamsReduders}
+export type {DefultState , ParamsReduders, TaskItem}
 export default TaskProps;

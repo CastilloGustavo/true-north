@@ -1,7 +1,11 @@
-import React from "react"
+import React, {Suspense} from "react"
+import { useSelector } from 'react-redux'
 import styled from 'styled-components';
+import { DefultState } from "../../interfaces";
 import SelectorTask from "../selectorTask";
 import Task from "../task";
+
+const ModalTask = React.lazy(() => import("../modal"));
 
 const Header = styled.div({
     display: 'flex',
@@ -30,16 +34,18 @@ const TitleLabel = styled.span({
 
 
 const App = (props: any) =>{
+    const { tasklist } = useSelector( (state: DefultState) => state);
     return(<div>
+        <Suspense fallback={<div></div>}>
+            <ModalTask></ModalTask>
+        </Suspense>
+       
         <Header>
             <TitleLabel> Welcome to My test To TrueNort </TitleLabel>
             <SelectorTask></SelectorTask>
         </Header>
         <Body>
-            <Task title="Gus" description="Leegue" ></Task>
-            <Task title="Gus2" description="Leegue2" ></Task>
-            <Task title="Gus3" description="Leegue" ></Task>
-            <Task title="Gus4" description="Leegue2" ></Task>
+            {tasklist.map( x => <Task title={x.title} description={x.description} ></Task>)}
         </Body>
     </div>)
 }

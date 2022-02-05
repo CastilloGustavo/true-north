@@ -5,7 +5,7 @@ const typeSetTaskList = 'setTaskList';
 const setTaskList = (taskList : TaskProps[])=> {
     return{
         type: typeSetTaskList,
-        payload: taskList,
+        payload : taskList,
     };
 };
 
