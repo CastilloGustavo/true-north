@@ -1,4 +1,4 @@
 {
     "optionSelectors" : [{"value": 1, "description": "Uno" },{"value": 5, "description": "Cinco" },{"value": 10, "description": "Diez" },{"value": 18, "description": "Dieciocho" }],
-    "defaultSelectorValue": 5
+    "defaultSelectorValue": 10
 }

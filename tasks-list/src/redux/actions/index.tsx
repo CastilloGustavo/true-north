@@ -1,6 +1,7 @@
-import TaskProps from "../../interfaces";
+import TaskProps, { setVisibleModalParamsRedures } from "../../interfaces";
 
 const typeSetTaskList = 'setTaskList';
+const typeSetVisibleModal = 'setVisibleModal';
 
 const setTaskList = (taskList : TaskProps[])=> {
     return{
@@ -9,6 +10,14 @@ const setTaskList = (taskList : TaskProps[])=> {
     };
 };
 
+const setVisibleModal = (param : setVisibleModalParamsRedures)=> {
+    return{
+        type: typeSetVisibleModal,
+        payload : param,
+    };
+};
 
 
-export {typeSetTaskList, setTaskList, }
+
+export {typeSetTaskList, setTaskList }
+export {typeSetVisibleModal, setVisibleModal }

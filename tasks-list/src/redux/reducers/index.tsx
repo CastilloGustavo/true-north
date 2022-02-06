@@ -1,4 +1,4 @@
-import {setTaskList,typeSetTaskList} from '../actions';
+import {setTaskList,typeSetTaskList, typeSetVisibleModal} from '../actions';
 import TaskProps, { DefultState, ParamsReduders } from '../../interfaces';
 
 
@@ -16,8 +16,16 @@ const defaultState: DefultState = {
 const reducer = (state = defaultState, paramsReduders: ParamsReduders) =>{
     switch(paramsReduders.type){
         case typeSetTaskList:{
-        return {...state,
-            tasklist: Object.assign([],paramsReduders.payload),
+            return {
+                ...state,
+                tasklist: Object.assign([],paramsReduders.payload),
+            }
+        }
+        case typeSetVisibleModal:{
+            return{
+                ...state,
+                infoModal:paramsReduders.payload.infoModal,
+                showModal: paramsReduders.payload.showModal
             }
         }
         default: 

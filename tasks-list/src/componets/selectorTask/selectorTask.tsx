@@ -40,6 +40,7 @@ const SelectorTask = (props: any) =>{
     useEffect(()=>{
         const wrapperList = createWrapperItems(config.defaultSelectorValue);
         dispatch(setTaskList(wrapperList));
+        setItemSelect(config.defaultSelectorValue)
     },[])
    
     const onClickItemSelectec = (params: React.ChangeEvent<HTMLSelectElement>) =>{

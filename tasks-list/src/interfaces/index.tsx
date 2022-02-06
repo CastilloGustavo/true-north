@@ -3,6 +3,12 @@ interface TaskProps {
     description: string;
 }
 
+interface ModalProps {
+    title: string;
+    description: string;
+    visible: boolean;
+}
+
 interface TaskItem {
     value: number,
     description: string,
@@ -20,5 +26,10 @@ interface ParamsReduders {
     payload: any,
 }
 
-export type {DefultState , ParamsReduders, TaskItem}
+interface setVisibleModalParamsRedures{
+    infoModal: TaskProps,
+    showModal: boolean,
+}
+
+export type {DefultState , ParamsReduders, TaskItem, ModalProps, setVisibleModalParamsRedures}
 export default TaskProps;
