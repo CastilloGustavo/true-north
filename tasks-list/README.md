@@ -13,7 +13,7 @@ Once downloaded we are going to start the application [npm run start].
 This will bring up the application in http://localhost:3001/
 
 
-# Diseño
+# Design
 A basic project architecture was used using Redux for state management, facilitating the centralization of the state of the entire application in a single place. 
 
 Independent components with low coupling were always thought of, so that they can be reused from any other part of the application.
