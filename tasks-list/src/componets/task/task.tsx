@@ -28,7 +28,7 @@ const MainContainer = styled.div`
 const Task = (props: TaskProps) =>{
     const {title, description} = props;
     const dispatch = useDispatch();
-
+    console.log('Ejecutando update')
     const onClickTask = () =>{
         const paramReducer: setVisibleModalParamsRedures ={
             showModal: true,

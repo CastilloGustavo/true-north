@@ -19,7 +19,9 @@ const App = (props: any) =>{
             <SelectorTask></SelectorTask>
         </Header>
         <Body>
-            {tasklist.map( x => <Task title={x.title} description={x.description} ></Task>)}
+            {
+             tasklist.map( x => <Task title={x.title} description={x.description} ></Task>)
+            }
         </Body>
     </div>)
 }
