@@ -1,46 +1,27 @@
-# Getting Started with Create React App
+# Introducción
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app) que nos ayuda con la configuracion de inicio para un rapido setup de la aplicacion.
 
-## Available Scripts
+Tambien no facilita las nuevas mediciones de performance dadas por google(https://support.google.com/webmasters/answer/9205520?hl=es).
 
-In the project directory, you can run:
+## Start Proyecto.
 
-### `npm start`
+Para iniciar el proyecto, Baje todas las dependencias con NPM -i o Yarn lo que le sea mas comodo.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Una vez descargardas vamos a pasar a compilar [npm run build] y luego levantar la aplicacion [npm run server].
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Esto nos levantara la aplicacion en un server con los archivos estaticos en http://localhost:3001/
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Server
+Se genero un server interno en la aplicacion para facilitar en trabajo con las llamadas REST ya que en el browser al relizar llamadas rest a un dominio distinto genera problemas de  Access-Control-Allow-Origin 
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Diseño
+Se utilizo una arquitectura basica de proyecto usando Redux para la gestion de estado facilitando la centralizacion del estado de toda la aplicacion en un unico lugar. Siempre se penso en componentes independientes con bajo acoplamiento, para que estos puedan ser reutilizados desde cualquier otra parte de la aplicacion.
+Se genero un modulo de servicios donde se centralizaran todas la llamas AJAX actualmente o en un futuro un Graphql. Para las llamadas ajax se utlizon la libreri Axios. Para resolver el tema de la autorizacion se extendio axios y se paso el valor por defecto, esto a fines de prueba porque lo que deberia ser en un futuro es tener ese codigo en un cookie que expire o trabajar con JWT para las autorizacion de Resquest.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Test
+Se relizaron test unitarios con la herramienta ya provista en la nueva version de react. (https://testing-library.com/) en el fondo es un wrapper de jest con mejoras de utilidad para test en react.
+Se podrian agregar test de integracion con selenium pero al ser un proyecto tan pequeño no me parecio necesario.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
