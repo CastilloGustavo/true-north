@@ -1,2 +1,3 @@
 # true-north
-Proyect to Apply Sr React Developer
+ Project to Apply Sr React Developer. The information on how to get up the application is in the Task List folder
+ s
